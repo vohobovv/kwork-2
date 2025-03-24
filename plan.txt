@@ -1,0 +1,13 @@
+header -> fixed
+  <div -> relative
+    menu-icon: addEventlistener(open-menu-bar)
+    company logo
+    search-bar >
+  <div -> relative
+    btn
+    btn>
+  <div.menu-bar -> absolute
+    nav -> flex, flex-column
+      ul,li
+    div.blur -> blur: 10px
+      close-icon: addEventlistener(close-menu-bar)

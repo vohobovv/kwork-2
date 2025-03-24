@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Дорвей</title>
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="./css/navbar.css">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+	<header class="fixed bg-[#131A2D] w-[100%] p-[16px] flex justify-between">
+		<div class="relative flex gap-[24px]">
+			<i class='bx bx-menu-alt-left text-[30px] text-white cursor-pointer pt-[10px]'></i>
+			<a href="#">
+				<img class="w-[110px] h-[64px]" src="./images/brand.svg" alt="Logo">
+			</a>
+			<div class="flex">
+				<input class="w-[260px] h-[40px] bg-[#00040B] placeholder:text-white" type="search"
+					placeholder="Название игры или про…">
+				<i class='bx bx-search text-white text-[30px]'></i>
+			</div>
+		</div>
+		<div class="flex gap-[12px]">
+			<button class="bg-[#232E4A] text-white w-[80px] h-[49px] rounded-[10px]">Вход</button>
+			<button class="bg-[#0099E9] text-white w-[140px] h-[44px] rounded-[10px]">Регистрация</button>
+		</div>
+		<div class="absolute hidden">
+
+		</div>
+	</header>
+
+
+	<script src="./js/script.js"></script>
+</body>
+
+</html>
