@@ -7,35 +7,966 @@
 	<title>Дорвей</title>
 	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-	<link rel="stylesheet" href="./css/navbar.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="./css/bullets.css">
 	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/swipper.css">
+	<link rel="stylesheet" href="./css/navbar.css">
 </head>
 
-<body>
+<body class="bg-[#000]">
 
 	<header class="fixed bg-[#131A2D] w-[100%] p-[16px] flex justify-between">
-		<div class="relative flex gap-[24px]">
-			<i class='bx bx-menu-alt-left text-[30px] text-white cursor-pointer pt-[10px]'></i>
-			<a href="#">
-				<img class="w-[110px] h-[64px]" src="./images/brand.svg" alt="Logo">
+		<div class="flex gap-[24px] items-center">
+			<label for="btn" class="menu-button cursor-pointer">
+				<i class='bx bx-menu text-white text-[30px]'></i>
+			</label>
+			<a class="a" href="#">
+				<img class="w-[110px] h-[64px]" src="./images/vvdd.png" alt="Logo">
 			</a>
-			<div class="flex">
-				<input class="w-[260px] h-[40px] bg-[#00040B] placeholder:text-white" type="search"
+			<div class="flex relative py-[10px]">
+				<input
+					class="lg:inline-block hidden rounded-[10px] w-[260px] h-[40px] text-white bg-[#00040B] border-1 border-white placeholder-text-white"
 					placeholder="Название игры или про…">
-				<i class='bx bx-search text-white text-[30px]'></i>
 			</div>
 		</div>
 		<div class="flex gap-[12px]">
-			<button class="bg-[#232E4A] text-white w-[80px] h-[49px] rounded-[10px]">Вход</button>
-			<button class="bg-[#0099E9] text-white w-[140px] h-[44px] rounded-[10px]">Регистрация</button>
-		</div>
-		<div class="absolute hidden">
-
+			<button class="bg-[#232E4A] text-white w-[80px] h-[49px] rounded-[10px]" onclick="registration()">Вход</button>
+			<button class="bg-[#0099E9] text-white w-[140px] h-[44px] rounded-[10px]"
+				onclick="registration()">Регистрация</button>
 		</div>
 	</header>
 
+	<!-- Sidebar -->
+	<div class="wrapper">
+		<input type="checkbox" id="btn">
+		<nav id="sidebar">
+			<div class="sidebar-header">
+				<label for="btn" class="close-button">
+					<i class='bx bx-x text-white text-[30px]'></i>
+				</label>
+			</div>
+			<ul class="list-items">
+				<li class="list-item no-dot">
+					<a class="a" href="#">
+						<i class='boxicons bx bxs-comment-detail'></i> Отзывы
+					</a>
+				</li>
+				<li class="list-item no-dot">
+					<a class="a" href="#">
+						<i class='boxicons bx bxs-gift'></i> Бонусы
+					</a>
+				</li>
+				<li class="list-item no-dot">
+					<a class="a" href="#">
+						<i class='boxicons bx bxs-download'></i>
+						Скачать
+					</a>
+				</li>
+				<li class="list-item no-dot">
+					<a class="a" href="#">
+						<i class='boxicons bx bxs-joystick'></i> Kometa Casino
+					</a>
+				</li>
+				<li class="list-item pt-[20px] no-dot">
+					<a class="a" href="#">
+						<i class='boxicons bx bxs-help-circle'></i> FAQ
+					</a>
+				</li>
+				<li class="list-item no-dot">
+					<a class="a" href="#">
+						<i class='boxicons bx bxs-file'></i> Правила и условия
+					</a>
+				</li>
+				<li class="list-item pt-[20px] no-dot">
+					<a class="a" href="#">
+						<i class='boxicons bx bxl-telegram'></i> Telegram
+					</a>
+				</li>
+				<li class="list-item no-dot">
+					<a class="a" href="#">
+						<i class='boxicons bx bxs-chat'></i> LiveChat
+					</a>
+				</li>
+				<li class="list-item pt-[20px] no-dot">
+					<a class="a" href="#">
+						<i class='boxicons bx bxl-instagram'></i> Instagram
+					</a>
+				</li>
+				<li class="list-item no-dot">
+					<a class="a" href="#">
+						<i class='boxicons bx bxl-twitter'></i> Twitter
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<main>
+		<section class="pt-[200px]">
+			<div class="main-container lg:flex lg:gap-[30px]">
+				<div class="left w-full lg:max-w-[1050px]">
+					<div class="big-container w-full ml-[18px]">
+						<div class="container bg-[#131A2D] rounded-[20px]">
+							<div class="content flex justify-between px-[20px] py-[10px]">
+								<div class="items-center">
+									<p class="text-[#DFE3E3] font-normal text-[24px] md:text-[33px] leading-[42px] mb-[35px]">
+										Лучшие игровые автоматы
+									</p>
+								</div>
+								<div class="flex items-center">
+									<a href="#" class="text-[#FFFFFF] font-normal text-[14px] lg:text-[18px] lg:leading-[22px] mb-[20px]">
+										Смотреть все слоты
+									</a>
+								</div>
+							</div>
+							<div class="swiper">
+								<div class="swiper-wrapper px-[20px]">
+									<div class="swiper-slide">
+										<img class="swiper-img" src="./images/games/1.jpg" alt="1">
+										<div class="caption">
+											<a href="#" class="heading">Играть...</a>
+											<ion-icon name="game-controller-outline" class="like-btn"></ion-icon>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<img class="swiper-img" src="./images/games/2.png" alt="1">
+										<div class="caption">
+											<a href="#" class="heading">Играть...</a>
+											<ion-icon name="game-controller-outline" class="like-btn"></ion-icon>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<img class="swiper-img" src="./images/games/3.jpg" alt="1">
+										<div class="caption">
+											<a href="#" class="heading">Играть...</a>
+											<ion-icon name="game-controller-outline" class="like-btn"></ion-icon>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<img class="swiper-img" src="./images/games/4.jpg" alt="1">
+										<div class="caption">
+											<a href="#" class="heading">Играть...</a>
+											<ion-icon name="game-controller-outline" class="like-btn"></ion-icon>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<img class="swiper-img" src="./images/games/5.jpg" alt="1">
+										<div class="caption">
+											<a href="#" class="heading">Играть...</a>
+											<ion-icon name="game-controller-outline" class="like-btn"></ion-icon>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<img class="swiper-img" src="./images/games/6.jpg" alt="1">
+										<div class="caption">
+											<a href="#" class="heading">Играть...</a>
+											<ion-icon name="game-controller-outline" class="like-btn"></ion-icon>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<img class="swiper-img" src="./images/games/7.webp" alt="1">
+										<div class="caption">
+											<a href="#" class="heading">Играть...</a>
+											<ion-icon name="game-controller-outline" class="like-btn"></ion-icon>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="content ml-[18px] py-[40px]">
+						<div class="mb-[35px]">
+							<h1 class="text-[#DFE3E3] font-normal text-[33px] leading-[42px] mb-[35px]">Казино Комета - слоты, зеркало
+								на сегодня</h1>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[20px]">Сайт работает под лицензией
+								<span class="font-semibold text-[18px] leading-[22px]">
+									(Комиссии по регулированию азартных игр и лотерей).
+								</span>
+							</p>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">С теоретическим возвращением игроку <span
+									class="font-semibold text-[18px] leading-[22px]">(RTP)</span> в пределах <span
+									class="font-semibold text-[18px] leading-[22px]">94-98%</span>, вы можете быть уверены в прозрачности
+								и
+								высоких шансах на выигрыш,
+								независимо от выбранной игры.</p>
+						</div>
+						<div>
+							<h2 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Интерфейс и функционал официального сайта Kometa Casino
+							</h2>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[20px]">Интерфейс онлайн-казино Комета
+								разработан с учетом максимального удобства и интуитивности для
+								пользователей. Главная страница
+								организована так, чтобы игрок мог легко найти любую необходимую функцию или игру.</p>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[20px]">Вверху размещены основные
+								кнопки для <span class="font-semibold text-[18px] leading-[22px]">регистрации</span> и <span
+									class="font-semibold text-[18px] leading-[22px]">входа в личный кабинет</span>, а также доступ в кассу
+								для
+								пополнения счета или
+								вывода средств.</p>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[20px]">Слева находится <span
+									class="font-semibold text-[18px] leading-[22px]">вертикальное меню</span> с основными категориями игр,
+								включая:</p>
+
+							<ul class="mb-[24px]">
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										Слоты
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										Настольные игры
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										Джекпоты
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										Лайв-игры
+									</a>
+								</li>
+								<li>
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										Краш-игры
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="mb-[35px]">
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-5">Также можно быстро перейти к любимым
+								играм или воспользоваться функцией <span class="font-semibold text-[18px] leading-[22px]">Smart
+									Поиск</span> для нахождения конкретных игр под
+								названием.</p>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-5">Кроме того, платформа поддерживает
+								функционал для участия в регулярных <span class="font-semibold text-[18px] leading-[22px]">акциях,
+									турнирах и бонусных
+									предложениях.</span>
+								Пользователи могут просматривать активные акции, такие как "Маленькая Пятница" или "Гран-При",
+								непосредственно на главной
+								странице или в разделе <span class="font-semibold text-[18px] leading-[22px]">"Акции"</span>.</p>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">Интерфейс адаптирован для мобильных
+								устройств, и пользователи имеют возможность <span
+									class="font-semibold text-[18px] leading-[22px]">Kometa Casino скачать</span>
+								официальное мобильное
+								приложение для <span class="font-semibold text-[18px] leading-[22px]">iOS и Android</span>, которое
+								обеспечивает тот же функционал, что и десктопная версия.</p>
+						</div>
+						<div class="mb-[35px]">
+							<h2 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Процесс регистрации и авторизации в Комета
+							</h2>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">Процесс регистрации в Комета казино прост
+								и удобен, позволяя пользователям быстро создать аккаунт и начать игру. Существует
+								несколько вариантов регистрации на платформе, обеспечивающих максимальную гибкость и удобство для
+								игроков.</p>
+						</div>
+						<div>
+							<h3 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Способы регистрации:
+							</h3>
+							<ul class="mb-[35px]">
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Через номер телефона: </span> пользователь
+										вводит номер мобильного телефона, после чего на указанный номер поступает<p
+											class="lg:ml-[24px] lg:inline-block inline"> SMS с
+											кодом подтверждения. После ввода этого кода регистрация завершается. Также необходимо указать
+											пароль для входа в личный кабинет и
+											согласиться с правилами и условиями казино.</p>
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">По электронной почте: </span> игрок Комета
+										вводит адрес электронной почты и создает пароль. После этого на почту<p
+											class="lg:ml-[24px] lg:inline-block inline"> поступает
+											письмо с подтверждением, согласно которому пользователь завершает регистрацию.</p>
+									</a>
+								</li>
+								<li>
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Через Google: </span> достаточно выбрать этот
+										метод на этапе создания аккаунта, и казино автоматически подключит <p
+											class="lg:ml-[26px] lg:inline-block inline">необходимые
+											данные через ваш профиль в Google.</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="mb-[35px]">
+							<h3 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Верификация
+							</h3>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[20px]">После создания аккаунта для
+								полноценного использования всех функций платформы, включая вывод средств, пользователю необходимо
+								пройти процесс верификации. Верификация включает подтверждение личности посредством загрузки документов.
+								Это может быть скан-
+								копия или фото паспорта гражданина, ID-карты или загранпаспорта.</p>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[20px]"><span
+									class="font-semibold text-[18px] leading-[22px]">Важно:</span> без прохождения верификации Комета
+								пользователь не сможет вывести средства из счета. Для
+								успешного завершения процесса
+								все документы должны быть проверены и утверждены администрацией казино. Верификация проходит быстро, а
+								после ее завершения
+								игрок получает полный доступ ко всем функциям <span
+									class="font-semibold text-[18px] leading-[22px]">Kometa Casino.</span></p>
+						</div>
+						<div class="mb-[35px]">
+							<h3 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Комета вход в личный кабинет
+							</h3>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[20px]">
+								Для авторизации в <span class="font-semibold text-[18px] leading-[22px]">Kometa Casino</span> игроку
+								нужно выполнить следующие шаги:
+							</p>
+							<ul class="mb-[20px]">
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Комета казино вход через телефон: </span>
+										Если вы зарегистрировались через номер телефона, просто введите его вместе с<p
+											class="lg:ml-[24px] lg:inline-block inline">
+											паролем в соответствующие поля на странице входа. Затем нажмите кнопку <span
+												class="font-semibold text-[18px] leading-[22px] italic">"Войти"</span>.</p>
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Авторизация по электронной почте: </span>
+										Введите свою электронную почту и пароль, созданный при регистрации, затем <p
+											class="lg:ml-[24px] lg:inline-block inline">
+											нажмите <span class="font-semibold text-[18px] leading-[22px] italic">"Вход"</span>.</p>
+									</a>
+								</li>
+								<li>
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Авторизация через Google: </span> Если
+										выбрали регистрацию через Google, просто нажмите кнопку <span
+											class="font-semibold text-[18px] leading-[22px] italic">"Войти через Google"</span>, <p
+											class="lg:ml-[24px] lg:inline-block inline">и система автоматически авторизует вас с помощью
+											подключенного аккаунта.</p>
+									</a>
+								</li>
+							</ul>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">В случае возникновения проблем с
+								авторизацией на <span class="font-semibold text-[18px] leading-[22px]">Комета казино онлайн</span>,
+								пользователь может воспользоваться функцией
+								<span class="font-semibold text-[18px] leading-[22px]">восстановления</span> пароля или обратиться в
+								службу поддержки.
+							</p>
+						</div>
+						<div class="mb-[35px]">
+							<h4 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Популярные развлечения в Kometa Casino
+							</h4>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">Сайт казино Комета предлагает своим
+								игрокам огромный выбор развлечений, подходящих для разных вкусов и предпочтений. Благодаря
+								разнообразному ассортименту игр, каждый игрок найдет что-то интересное, независимо от того, предпочитает
+								ли он классические
+								игровые автоматы или современные live-игры с реальными дилерами. Платформа Комета постоянно обновляется,
+								добавляя новые игры
+								и совершенствуя функционал для удобства пользователей.</p>
+						</div>
+						<div class="mb-[35px]">
+							<h4 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Широкий выбор игровых автоматов
+							</h4>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">
+								Казино предлагает различные <span class="font-semibold text-[18px] leading-[22px]">Комета казино
+									автоматы</span> от различных провайдеров, таких как <span
+									class="font-semibold text-[18px] leading-[22px] italic">NetEnt, Microgaming и Playtech</span>. В
+								казино доступно более <span class="font-semibold text-[18px] leading-[22px]">1000 слотов</span>,
+								охватывающих разные темы: от классических фруктовых слотов до современных игр с использованием <span
+									class="font-semibold text-[18px] leading-[22px]">3D-графики</span> и интересными сюжетами.
+							</p>
+						</div>
+						<div class="mb-[35px]">
+							<h4 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Слоты в казино доступны в разных форматах:
+							</h4>
+							<ul class="mb-[25px]">
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Джекпот: </span> игровые автоматы с
+										накопительными призовыми фондами, которые растут с каждым вращением барабанов.
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Аркадные игры: </span> <span
+											class="italic">Комета </span>казино слоты с простыми правилами и динамическим геймплеем.
+									</a>
+								</li>
+								<li>
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Игры со ставками: </span> <span
+											class="italic">Комета казино автоматы на деньги </span>, где игроки могут делать ставки на разные
+										результаты.
+									</a>
+								</li>
+								<li>
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Мгновенный выигрыш: </span>
+										игры, в которых игроки могут выиграть призы без необходимости вращать барабаны.
+									</a>
+								</li>
+								<li>
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Покупка собственности: </span> автоматы, где
+										игроки могут покупать дополнительные функции, чтобы повысить свои шансы<p
+											class="lg:ml-[23px] lg:inline-block inline"> на
+											выигрыш. Казино Комета также дает возможность <span
+												class="font-semibold text-[18px] leading-[22px]">играть на деньги</span>, так и в <span
+												class="font-semibold text-[18px] leading-[22px]">демо-режиме.</span></p>
+									</a>
+								</li>
+							</ul>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">Казино Комета также дает возможность
+								играть на деньги, так и в <span class="font-semibold text-[18px] leading-[22px]">демо-режиме.</span></p>
+						</div>
+						<div class="mb-[50px]">
+							<h4 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[32px]">
+								Популярные игровые автоматы
+							</h4>
+							<h5 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Book of Dead
+							</h5>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[35px]">
+								<span class="font-semibold text-[18px] leading-[22px]">Book of Dead</span> – это увлекательный игровой
+								автомат с археологической тематикой. Игроки должны исследовать
+								древние папирусы и
+								собирать большие выигрыши благодаря символам большого выигрыша и расширяющимся символам в режиме
+								бесплатных вращений.
+							</p>
+							<h5 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Starburst
+							</h5>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[35px]">
+								<span class="font-semibold text-[18px] leading-[22px]">Starburst</span> – это культовый слот с яркими
+								драгоценными камнями на барабанах. Игра известна своей простотой и возможностью выигрыша
+								как взлетными, так и нисходящими линиями.
+							</p>
+							<h5 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Gonzo's Quest
+							</h5>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[35px]">
+								<span class="font-semibold text-[18px] leading-[22px]">Gonzo's Quest</span> – это приключенческий слот,
+								в котором игроки присоединяются к Гонзо. Игра известна своей инновационной функцией
+								падающих барабанов и возможностью получать множители выигрыша в режиме бесплатных вращений.
+							</p>
+							<h5 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Ronin
+							</h5>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[35px]">
+								<span class="font-semibold text-[18px] leading-[22px]">Ronin</span> – это <span
+									class="italic">Uabet</span> казино автоматы онлайн с тематикой самураев и их увлекательного мира.
+								Игрокам предлагается участвовать в
+								приключенческих сражениях и выигрывать ценные награды благодаря символам Ronin и функции бесплатных
+								вращений.
+							</p>
+							<h5 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								King Craft: Menomin
+							</h5>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[35px]">
+								<span class="font-semibold text-[18px] leading-[22px]">King Craft: Menomin</span> – это фэнтези-слот, в
+								котором игроки могут увидеть волшебный мир королевства Меномин. Игра отличается
+								захватывающими бонусными режимами и возможностью выигрывать большие сокровища.
+							</p>
+							<h6 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Hot Angels
+							</h6>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[35px]">
+								<span class="font-semibold text-[18px] leading-[22px]">Hot Angels</span> – это игровой автомат, который
+								предлагает игрокам яркий геймплей и возможность выигрывать большие суммы денег
+								благодаря бонусным функциям и символам.
+							</p>
+							<h6 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Auto Roulette
+							</h6>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[35px]">
+								<span class="font-semibold text-[18px] leading-[22px]">Auto Roulette</span> – это вариация рулетки, где
+								игроки могут использовать автоматизированное вращение барабана. Это быстрый и
+								увлекательный способ <span class="italic">Комета казино</span> играть в рулетку и делать ставки на
+								выигрыш.
+							</p>
+							<h6 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Gold of Egypt
+							</h6>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">
+								<span class="font-semibold text-[18px] leading-[22px]">Gold of Egypt</span> – это слот с экзотической
+								тематикой, который переносит игроков в атмосферу Древнего Египта. Игроки могут искать
+								сокровища фараонов и получать большие выигрыши благодаря бонусным символам и бесплатным вращениям
+							</p>
+						</div>
+						<div class="mb-[35px]">
+							<h6 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Заключение
+							</h6>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">В статье об игровых автоматах в <span
+									class="font-semibold text-[18px] leading-[22px]">казино Комета</span> мы рассмотрели разнообразие
+								слотов от провайдеров. Игрокам доступно более <span
+									class="font-semibold text-[18px] leading-[22px]">1000 слотов</span> на разные темы. Игроки могут
+								попробовать казино <span class="italic">играть онлайн</span> в демо-режиме без реальных ставок</p>
+						</div>
+						<div class="mb-[35px]">
+							<h6 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Как играть на деньги в казино игровые автоматы
+							</h6>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[20px]">
+								Игровые автоматы <span class="font-semibold text-[18px] leading-[22px]">Kometa Casino</span> интересны и
+								разнообразны. А больше всего они привлекают тех, кто хочет
+								играть на деньги. Чтобы
+								почувствовать это на себе, нужно немного, однако клиент должен отвечать нескольким требованиям –
+								совершеннолетие и отсутствие уже
+								зарегистрированных профилей на сайте казино. Также рекомендуется заранее перечитать условия
+								использования сайта – это поможет
+								избежать недоразумений.
+							</p>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[16px]">
+								Чтобы начать играть на деньги, нужно сделать следующие простые шаги:
+							</p>
+							<ol class="mb-[25px]">
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Вход на официальный сайт казино. </span>
+										Поскольку у него нет лицензии, то он может блокироваться провайдерами. Соответственно, понадобится
+										зеркало. Его можно найти на тематических форумах, запросив техподдержку или присоединившись к
+										каналам в социальных сетях. Зеркальный сайт ничем не отличается от официального, кроме доменного
+										имени.
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Регистрация. </span> Это можно сделать любым
+										удобным способом. Главное – при создании профиля вписывать только достоверную информацию. В
+										дальнейшем она будет проверяться, и если обнаружен обман, профиль могут заблокировать. Для
+										первоначальной верификации необходимо подтвердить контактные данные. Чтобы сделать это с электронной
+										почтой, необходимо перейти по ссылке из письма от казино, для номера телефона – вписать пароль из
+										СМС.
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Пополнение баланса. </span> Это также
+										разрешено делать любым способом. Однако учтите, что он должен быть удобным для вывода.
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Выбор и запуск игрового автомата. </span>
+										Разнообразие велико, потому бывает непросто. Если вы впервые в казино, обратите внимание на
+										категории «Топ» и «Популярные». Если уже есть определенный опыт или предпочтения, воспользуйтесь
+										поисковой строкой или отфильтруйте по тематике, сюжету, провайдеру и т.д.
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Настройка автомата. </span>
+										Это сводится к выбору количества активных линий, если эта опция доступна в автомате. Определитесь
+										также с размером ставки. В отдельных слотах она может составлять от 0,1 до 10 монет, в других – даже
+										до 100 монет. Кроме того, доступна настройка автоигры, хотя и не во всех автоматах. Суть автоигры
+										заключается в запуске определенного количества вращений без вмешательства в процесс. Это комфортно,
+										так как за всем можно просто следить.
+									</a>
+								</li>
+								<li>
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Дождаться завершения раунда и оценить его
+											результаты. </span>
+										В зависимости от дополнительных функций, в автомате после завершения раунда можно попробовать свои
+										силы в риск-игре. Она встречается в старых версиях игровых автоматов, но в современных слотах
+										практически не используется. В риск-игре можно удвоить или увеличить выигрыш в четыре раза, угадав
+										цвет или масть карты. Также по результатам вращения формируются комбинации, которые могут привести к
+										запуску бесплатных вращений или других дополнительных раундов. Чтобы понимать, какие опции доступны,
+										перед запуском автомата следует ознакомиться с правилами игры.
+									</a>
+								</li>
+							</ol>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">
+								Если вы точно не знаете, на каком игровом слоте остановиться, но хотите попробовать, то для многих
+								доступен демо-режим. О нем подробнее поговорим дальше.
+							</p>
+						</div>
+						<div class="mb-[35px]">
+							<h6 class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Играть в автоматы бесплатно: как это происходит
+							</h6>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">
+								Если не готовы ставить реальные деньги или хотите оценить ассортимент казино, рекомендуем присмотреться
+								к <span class="font-semibold text-[18px] leading-[22px]">демо-режиму</span>. Он бесплатный и не
+								предусматривает какой-либо платы за игру. Активировать его могут даже клиенты, не имеющие профиля. Для
+								этого нужно только запустить автоматы в демо-режиме. Он доступен для слотов, карточных игр, авиатору. Не
+								получится играть бесплатно только в <span
+									class="font-semibold text-[18px] leading-[22px]">лайв-казино</span>, там предусмотрен исключительно
+								денежный формат.
+							</p>
+						</div>
+						<div class="mb-[35px]">
+							<p class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Как играть в демо-режиме
+							</p>
+							<ol class="mb-[25px]">
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Зайти на сайт Kometa Casino</span> и выбрать
+										интересующий вас игровой автомат.
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Запустить его в демо. </span> Просто
+										подведите курсор к игре и увидите две кнопки: "на деньги" и "демо".
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Настроить автомат </span> - выбрать
+										количество линий, размер ставки, автоигру.
+									</a>
+								</li>
+								<li>
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Дождаться завершения вращения </span>
+										и оценить результат.
+									</a>
+								</li>
+							</ol>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">
+								<span class="font-semibold text-[18px] leading-[22px]">Демо-режим Kometa</span> не ограничен во времени
+								и продолжительности игры. Все, что понадобится в случае исчерпания объема монет, – обновить страницу. Их
+								количество сразу станет таким же, как в начале.
+							</p>
+						</div>
+						<div class="mb-[35px]">
+							<p class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Преимущества бесплатной игры
+							</p>
+							<ul class="mb-[25px]">
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Шанс играть, совершенно не рискуя.</span>
+										Поскольку собственные деньги вы не используете, то нет забот.
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Возможность разработать свою стратегию игры,
+										</span> а еще использовать существующую и проверить, как она работает.
+									</a>
+								</li>
+								<li>
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Возможность просто расслабиться и насладиться
+											игрой</span>, совершенно не заботясь о расходах.
+									</a>
+								</li>
+							</ul>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">
+								<span class="font-semibold text-[18px] leading-[22px]">Демо-режим Kometa Casino</span> – отличный
+								вариант протестировать новые автоматы. Даже если у вас есть профиль, можете без проблем запускать слоты
+								в бесплатном формате. Просто выберите его на самом старте.
+							</p>
+						</div>
+						<div class="mb-[35px]">
+							<p class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Пополнение счета
+							</p>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[18px]">
+								Игроки <span class="font-semibold text-[18px] leading-[22px]">Комета</span> могут пополнять свой счет с
+								помощью следующих методов:
+							</p>
+							<ul class="">
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Visa/Mastercard</span> – один из наиболее
+										распространенных методов пополнения. Преимуществом этого метода является <p
+											class="lg:ml-[24px] lg:inline-block inline">
+											отсутствие комиссии.</p>
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Apple Pay</span> – для владельцев устройств
+										Apple также доступна оплата через Apple Pay, позволяющая пополнить счет на <p
+											class="lg:ml-[24px] lg:inline-block inline">
+											сумму от ₴100 до ₴29 999 без комиссии. Этот метод особенно удобен для мобильных пользователей.</p>
+									</a>
+								</li>
+								<li>
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Терминалы EasyPay и City24</span> – для тех,
+										кто предпочитает пополнение через физические терминалы, доступны в сети <p
+											class="lg:ml-[24px] lg:inline-block inline">EasyPay
+											и City24. Пользователи могут найти ближайший терминал и совершить платеж без комиссии.</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="mb-[35px]">
+							<p class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Вывод средств
+							</p>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">
+								Для вывода выигрышей в <span class="font-semibold text-[18px] leading-[22px]">Комета</span> также
+								доступен широкий выбор методов. Основным методом является вывод на карты <span
+									class="font-semibold text-[18px] leading-[22px]">Visa</span> или <span
+									class="font-semibold text-[18px] leading-[22px]">Mastercard.</span>
+							</p>
+						</div>
+						<div class="mb-[35px]">
+							<p class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Бонусная программа казино Комета
+							</p>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">
+								Казино <span class="font-semibold text-[18px] leading-[22px]">Комета</span> предлагает своим игрокам
+								разнообразную и обильную бонусную программу, которая подходит как для новичков, так и для постоянных
+								пользователей. Основным элементом этой программы является <span
+									class="font-semibold text-[18px] leading-[22px]">поздравительный бонус</span>, а также различные
+								регулярные акции для поддержания активности игроков.
+							</p>
+						</div>
+						<div class="mb-[35px]">
+							<p class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Поздравительный бонус
+							</p>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[20px]">
+								Новые игроки в казино <span class="font-semibold text-[18px] leading-[22px]">Комета</span> могут
+								воспользоваться выгодным бонусом, который значительно повышает шансы на выигрыш. При первой регистрации
+								и пополнении счета доступны следующие преимущества:
+							</p>
+							<ul class="mb-[20px]">
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">150% бонуса на первый депозит </span> –
+										минимальный депозит ₴500, максимальный бонус до ₴30,000.
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">125 фриспинов на слоты</span> – фриспины
+										распределяются на первые 5 депозитов.
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">75% бонуса на второй и третий депозиты</span>
+										– а также дополнительные 50 и 75 фриспинов соответственно.
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">125% бонус на четвертый депозит.</span>
+									</a>
+								</li>
+								<li>
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">200% бонус на пятый депозит.</span>
+									</a>
+								</li>
+							</ul>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">
+								Чтобы получить бонус, нужно выполнить требования по <span
+									class="font-semibold text-[18px] leading-[22px]">отыигрышу</span> – вейджер <span
+									class="font-semibold text-[18px] leading-[22px]">х35</span>. Это касается как бонусных
+								средств, так и фриспинов.
+								Бонус доступен в течение 7 дней после активации.
+							</p>
+						</div>
+						<div class="mb-[35px]">
+							<p class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Другие акции
+							</p>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">
+								Помимо приветственного бонуса регулярно проводятся различные акции для игроков, в том числе <span
+									class="font-semibold text-[18px] leading-[22px]">Комета бездепозитный бонус, программа лояльности,
+									бонус на депозит и фриспины.</span>
+							</p>
+						</div>
+						<div>
+							<p class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px]">
+								Поддержка клиентов в Комета казино
+							</p>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[18px]">
+								<span class="font-semibold text-[18px] leading-[22px]">Комета казино</span> предоставляет игрокам
+								надежную и быструю службу поддержки, которая работает <span
+									class="font-semibold text-[18px] leading-[22px]">24/7</span> для решения любых вопросов и проблем.
+								Игроки могут обращаться за помощью через следующие каналы:
+							</p>
+							<ul class="mb-[20px]">
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Онлайн-чат: </span>
+										доступен непосредственно на сайте казино Комета для мгновенной коммуникации с оператором.
+									</a>
+								</li>
+								<li class="mb-[12px]">
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Электронная почта:</span>можно отправить
+										письмо на адрес, где операторы отвечают в течение короткого времени.
+									</a>
+								</li>
+								<li>
+									<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+										<span class="font-semibold text-[18px] leading-[22px]">Форма обратной связи:</span>
+										доступна на сайте для отправки сообщений с указанием вашей электронной почты и номера <p
+											class="ml-[24px]">телефона.</p>
+									</a>
+								</li>
+							</ul>
+							<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">
+								<span class="font-semibold text-[18px] leading-[22px]">Комета казино</span> – надежная платформа с
+								широким выбором игр, щедрыми бонусами и профессиональной поддержкой клиентов.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="right w-full max-w-[420px]">
+					<div class="lg:flex lg:flex-col items-center px-[40px] hidden">
+						<div class="max-w-[341px] w-full bg-[#131A2D] mb-[20px] rounded-[20px] px-[38px] py-[20px]">
+							<p class="text-[#DFE3E3] text-[20px] leading-[28px] font-normal mb-[15px] text-center">
+								Jackpot
+							</p>
+							<p class="text-[#FFFFFF] font-bold text-[26px] leading-[28px] mb-[20px] text-center">
+								21 035 474 ₽
+							</p>
+							<button class="bg-[#0099E9] text-white w-[270px] h-[44px] rounded-[10px] mb-[10px] text-center">Игры с
+								джекпотом</button>
+						</div>
+						<div class="max-w-[341px] h-[372px] w-full py-[30px] px-[37px] mb-[20px] rounded-[20px] bg-img-2">
+							<p class="text-[#FAFDFF] font-normal text-[18px] leading-[22px] mb-[9px] text-center">
+								150% и 150 фриспинов
+							</p>
+							<p class="text-[#FAFDFF] font-bold text-[26px] leading-[28px] mb-[200px] text-center">
+								Welcome бонус
+							</p>
+							<button class="bg-[#0099E9] text-white w-[270px] h-[44px] rounded-[10px] text-center">Забрать
+								бонус</button>
+						</div>
+						<div class="max-w-[341px] h-[372px] w-full py-[20px] px-[40px] mb-[15px] rounded-[20px]  bg-img">
+							<p class="text-[#FAFDFF] font-normal text-[18px] leading-[22px] mb-[9px] text-center">
+								Начисляем до 15% от пополнений
+							</p>
+							<p class="text-[#FAFDFF] font-bold text-[36px] leading-[44px] mb-[150px] text-center">
+								Каждое <br>
+								воскресенье
+							</p>
+							<button class="bg-[#0099E9] text-white w-[270px] h-[44px] rounded-[10px] text-center">Регистрация</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="bg-[#131A2D] py-[50px] w-full lg:max-w-[1050px] rounded-[20px]">
+		<div class="px-[18px]">
+			<div class="flex space-x-4 items-center">
+				<div>
+					<p class="font-semibold text-[18px] leading-[22px] text-[#FFFFFF]">
+						Следите за акциями в соцсетях
+					</p>
+				</div>
+				<div class="flex gap-[20px]">
+					<a href="#"
+						class="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full text-white hover:bg-white hover:text-[#E1306C] transition">
+						<i class="bx bxl-instagram text-2xl"></i>
+					</a>
+
+					<!-- Twitter -->
+					<a href="#"
+						class="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full text-white hover:bg-white hover:text-[#1DA1F2] transition">
+						<i class="bx bxl-twitter text-2xl"></i>
+					</a>
+
+					<!-- Facebook -->
+					<a href="#"
+						class="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full text-white hover:bg-white hover:text-[#1877F2] transition">
+						<i class="bx bxl-facebook text-2xl"></i>
+					</a>
+
+					<!-- Telegram -->
+					<a href="#"
+						class="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full text-white hover:bg-white hover:text-[#0088cc] transition">
+						<i class="bx bxl-telegram text-2xl"></i>
+					</a>
+				</div>
+			</div>
+			<div class="flex py-[45px] gap-[35px] flex-wrap">
+				<div class="flex justify-between w-full max-w-[330px] lg:max-w-[465px] mb-[10px]">
+					<div>
+						<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+							Отзывы
+						</a>
+					</div>
+					<div>
+						<a class="text-[#FFFFFF] font-normal text-[23px] leading-[22px]" href="#">
+							<i class="bx bx-chevron-right"></i>
+						</a>
+					</div>
+				</div>
+				<div class="flex justify-between w-full max-w-[330px] lg:max-w-[465px]">
+					<div>
+						<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+							Скачать
+						</a>
+					</div>
+					<div>
+						<a class="text-[#FFFFFF] font-normal text-[23px] leading-[22px]" href="#">
+							<i class="bx bx-chevron-right"></i>
+						</a>
+					</div>
+				</div>
+				<div class="flex justify-between w-full max-w-[330px] lg:max-w-[465px]">
+					<div>
+						<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+							Бонусы
+						</a>
+					</div>
+					<div>
+						<a class="text-[#FFFFFF] font-normal text-[23px] leading-[22px]" href="#">
+							<i class="bx bx-chevron-right"></i>
+						</a>
+					</div>
+				</div>
+				<div class="flex justify-between w-full max-w-[330px] lg:max-w-[465px]">
+					<div>
+						<a class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]" href="#">
+							Kometa Casino
+						</a>
+					</div>
+					<div>
+						<a class="text-[#FFFFFF] font-normal text-[23px] leading-[22px]" href="#">
+							<i class="bx bx-chevron-right"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="flex items-center gap-[35px] pt-[15px]">
+				<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px] mb-[20px]">Веб-ресурс имеет исключительно
+					информационный характер. Сайт не принимает денежные средства и не осуществляет азартные
+					игры на деньги.</p>
+			</div>
+			<div class="text-center pt-[20px]">
+				<p class="text-[#494F4F] font-normal text-[40px] leading-[42px] mb-[20px]">18+</p>
+				<p class="text-[#FFFFFF] font-normal text-[18px] leading-[22px]">Kometa Casino / Казино Комета. Актуальное
+					зеркало на сегодня 23 марта 2025</p>
+			</div>
+		</div>
+	</footer>
+
+
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<!-- Swipper js -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 	<script src="./js/script.js"></script>
+	<script src="./js/swiper.js"></script>
+	<script src="./js/link.js"></script>
 </body>
 
 </html>

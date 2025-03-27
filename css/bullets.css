@@ -1,0 +1,26 @@
+ul {
+	list-style: none;
+}
+
+ul li::before{
+	content: '\2022';
+	background: linear-gradient(90deg, rgb(0, 174, 196) 0%, rgb(3, 209, 146) 100%);
+	font-weight: 900;
+	display: inline-block;
+	width: 1em;
+	font-size: 20px;
+  -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+ul li.no-dot::before {
+	content: none;
+}
+
+ol{
+	list-style: decimal;
+	color: red;
+	margin-left: 18px;
+	font-size: 20px;
+	font-weight: 700;
+}
